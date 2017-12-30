@@ -28,14 +28,17 @@ router.put('/edit',(req,res) => {
 router.put("/new",(req,res) => {
     const arr = req.body
     arr.forEach(obj  => {
-        Product.update(
+        return Product.update(
             { id : obj.id },
             { inventory : obj.inventory},
             { multi : true }
         )
+        .then(() => console.log(obj.id))
     })
-    res.json({ })
+    res.json({})
 })
+
+
 
 
 

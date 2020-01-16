@@ -14,7 +14,7 @@ dotenv.config()
 const app = express()
 app.use(bodyParser.json())
 mongoose.Promise = Promise
-mongoose.connect('mongodb://joe:1234@ds013881.mlab.com:13881/ecommerce_db_cloud' , { useMongoClient : true })
+mongoose.connect('mongodb://joe:1234@ds135777.mlab.com:35777/heroku_44t0bb4r' , { useMongoClient : true })
 
 app.use('/api/auth',auth)
 app.use('/api/users',users)

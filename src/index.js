@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import path from 'path'
 import mongoose from 'mongoose'
 import auth from './routes/auth'
@@ -12,6 +13,7 @@ import admin from './routes/admin'
 
 dotenv.config()
 const app = express()
+app.use(cors())
 app.use(bodyParser.json())
 mongoose.Promise = Promise
 mongoose.connect('mongodb://joe:1234@ds135777.mlab.com:35777/heroku_44t0bb4r' , { useMongoClient : true })

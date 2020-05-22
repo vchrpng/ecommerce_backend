@@ -9,13 +9,15 @@ router.get("/",(req,res) => {
   .then(order => {
       res.json(order)
   })
-  .catch(err => res.status(400).json({ errors : err.errors }))
+  .catch(err => res.status(400).json({ errors : parseErrors(err) }))
 })
 
-router.post("/", (req, res) => {
-  Order.create(req.body)
-    .then(order => res.json({order}))
-    .catch(err => res.status(400).json({ errors: parseErrors(err.errors) }))
-})
+router.post('/stripe/charge', postCharge)
+
+// router.post("/", (req, res) => {
+//   Order.create(req.body)
+//     .then(order => res.json({order}))
+//     .catch(err => res.status(400).json({ errors: parseErrors(err.errors) }))
+// })
 
 export default router

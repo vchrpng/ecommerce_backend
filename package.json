@@ -22,6 +22,7 @@
     "lodash": "^4.17.4",
     "mongoose": "^4.13.6",
     "mongoose-unique-validator": "^1.0.6",
-    "nodemon": "^1.12.4"
+    "nodemon": "^1.12.4",
+    "stripe": "^8.54.0"
   }
 }

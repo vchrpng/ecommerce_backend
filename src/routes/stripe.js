@@ -3,14 +3,14 @@ import Stripe from 'stripe'
 
 const router = express.Router()
 
-const stripe = new Stripe(process.env.STRIPE_SECRET)
+const stripeCharge = new Stripe(process.env.STRIPE_SECRET)
 
 
 async function postCharge(req, res) {
     try {
       const { amount, source, receipt_email } = req.body
       
-      const charge = await stripe.charges.create({
+      const charge = await stripeCharge.charges.create({
         amount,
         currency: 'usd',
         source,
@@ -34,5 +34,5 @@ async function postCharge(req, res) {
 router.post('/stripe/charge', postCharge)
 
   
-export default stripe 
+export default router 
   

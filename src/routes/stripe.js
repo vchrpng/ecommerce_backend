@@ -31,7 +31,7 @@ async function postCharge(req, res) {
   }
 
   
-router.post('/stripe/charge', postCharge)
+router.post('/charge', postCharge)
 
   
 export default router 

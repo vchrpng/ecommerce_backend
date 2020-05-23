@@ -13,7 +13,7 @@ router.get("/",(req,res) => {
   .catch(err => res.status(400).json({ errors : parseErrors(err) }))
 })
 
-router.post('/stripe/charge', postCharge)
+router.post('/charge', postCharge)
 
 // router.post("/", (req, res) => {
 //   Order.create(req.body)

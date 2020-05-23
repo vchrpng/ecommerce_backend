@@ -10,6 +10,7 @@ import users from './routes/users'
 import products from './routes/products'
 import orders from './routes/orders'
 import admin from './routes/admin'
+import stripe from './routes/stripe'
 
 dotenv.config()
 const app = express()
@@ -22,6 +23,7 @@ app.use('/api/auth',auth)
 app.use('/api/users',users)
 app.use('/api/products',products)
 app.use('/api/orders',orders)
+app.use('/api/stripe',stripe)
 
 app.use('/api/admin',admin)
 

@@ -6,7 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET)
 async function postCharge(req, res) {
     try {
       const { amount, source, receipt_email } = req.body
-  
+      
       const charge = await stripe.charges.create({
         amount,
         currency: 'usd',
@@ -15,7 +15,7 @@ async function postCharge(req, res) {
       })
   
       if (!charge) throw new Error('charge unsuccessful')
-  
+      
       res.status(200).json({
         message: 'charge posted successfully',
         charge
@@ -26,6 +26,10 @@ async function postCharge(req, res) {
       })
     }
   }
+
+  
+router.post('/stripe/charge', postCharge)
+
   
   module.exports = postCharge
   

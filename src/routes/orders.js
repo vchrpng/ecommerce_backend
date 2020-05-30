@@ -1,7 +1,7 @@
 import express from "express"
 import Order from "../models/order"
 import parseErrors from "../utils/parseErrors"
-import postCharge from './stripe'
+// import postCharge from './stripe'
 
 const router = express.Router()
 
@@ -13,7 +13,7 @@ router.get("/",(req,res) => {
   .catch(err => res.status(400).json({ errors : parseErrors(err) }))
 })
 
-router.post('/charge', postCharge)
+// router.post('/charge', postCharge)
 
 // router.post("/", (req, res) => {
 //   Order.create(req.body)

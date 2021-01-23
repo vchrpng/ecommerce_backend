@@ -17,7 +17,8 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 mongoose.Promise = Promise
-mongoose.connect('mongodb://joe:1234@ds135777.mlab.com:35777/heroku_44t0bb4r' , { useMongoClient : true })
+
+mongoose.connect('mongodb+srv://joe:1234@cluster-44t0bb4r.o7zau.mongodb.net/heroku_44t0bb4r?retryWrites=true&w=majority', { useCreateIndex: true, useUnifiedTopology: true, useNewUrlParser: true })
 
 app.use('/api/auth',auth)
 app.use('/api/users',users)
